@@ -10,9 +10,7 @@
 
     <nav>
         <ul>
-            <li> <a href="/about.view.php"> Home </a> </li>
-
-            <li> <a href="/about.view.php"> About Us </a> </li>
+            <li> <a href="/"> Home </a> </li>
 
             <li> <a href="/about.view.php"> About Us </a> </li>
 
@@ -20,8 +18,3 @@
         </ul>
 
     </nav>
-
-    
-<h1> About Page </h1>
-</body>
-</html>

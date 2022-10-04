@@ -1,16 +1,17 @@
 <?php
-class Connection 
+class Connection
 {
-	public static function connect( $config )
+	public static function connect($config)
 	{
-		try{
- 			return new PDO(
- 				$config['connection'] .';dbname='.$config['name'],
- 				$config['username'],
- 				$config['password'],
- 				$config['options']
- 				);
-		}catch (PDOException $e) {
+		// 
+		try {
+			return new PDO(
+				$config['connection'] . ';port=' . $config['port'] . ';dbname=' . $config['name'],
+				$config['username'],
+				$config['password'],
+				$config['options'],
+			);
+		} catch (PDOException $e) {
 			die($e->getMessage());
 		}
 	}
