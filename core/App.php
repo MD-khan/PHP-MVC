@@ -1,5 +1,6 @@
 <?php
 // Dipendency injection container
+namespace App\Core;
 
 class App
 {
@@ -13,7 +14,7 @@ class App
 
     public static function get($key)
     {
-        if(! array_key_exists($key, static::$registry)) {
+        if (!array_key_exists($key, static::$registry)) {
             throw new Exception("Np {$key} is bound in the container");
         }
 

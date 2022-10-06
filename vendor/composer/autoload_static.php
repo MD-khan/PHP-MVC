@@ -7,17 +7,17 @@ namespace Composer\Autoload;
 class ComposerStaticInit2d007d7b768d5f2908b0c649fbb041a8
 {
     public static $classMap = array (
-        'App' => __DIR__ . '/../..' . '/core/App.php',
+        'App\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/controllers/PageController.php',
+        'App\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/controllers/UsersController.php',
+        'App\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',
         'ComposerAutoloaderInit2d007d7b768d5f2908b0c649fbb041a8' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit2d007d7b768d5f2908b0c649fbb041a8' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
-        'PageController' => __DIR__ . '/../..' . '/controllers/PageController.php',
         'QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
         'Request' => __DIR__ . '/../..' . '/core/Request.php',
         'Router' => __DIR__ . '/../..' . '/core/Router.php',
-        'UsersController' => __DIR__ . '/../..' . '/controllers/UsersController.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

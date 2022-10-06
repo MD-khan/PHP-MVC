@@ -1,4 +1,4 @@
-<?php require 'views/partials/header.php'; ?>
+<?php require 'app/views/partials/header.php'; ?>
 <h1> All users </h1>
 <ul>
     <?php foreach ($users as $user) : ?>
