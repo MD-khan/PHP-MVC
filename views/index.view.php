@@ -2,13 +2,9 @@
 
 <h1> Task for The Day </h1>
 <ul>
-	<?php foreach ($tasks as $task) : ?>
+	<?php foreach ($users as $user) : ?>
 		<li>
-			<?php if ($task->completed) : ?>
-				<strike> <?= $task->description; ?> </strike>
-			<?php else : ?>
-				<?= $task->description; ?>
-			<?php endif; ?>
+			<?= $user->name; ?>
 
 		</li>
 	<?php endforeach; ?>

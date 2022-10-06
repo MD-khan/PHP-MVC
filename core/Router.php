@@ -1,12 +1,13 @@
 <?php
 class Router 
 {
+	
 	public $routes = [
 		'GET' =>[],
 		'POST' => []
 	];
 
-	
+
 	public static function load($file)
 	{
 		$router = new static;
