@@ -1,9 +1,9 @@
 <?php
-class Router 
+class Router
 {
-	
+
 	public $routes = [
-		'GET' =>[],
+		'GET' => [],
 		'POST' => []
 	];
 
@@ -12,19 +12,19 @@ class Router
 	{
 		$router = new static;
 		require $file;
-		return $router; 	
+		return $router;
 	}
 
 
 
 
-	public function get($uri, $controller )
+	public function get($uri, $controller)
 	{
 		$this->routes['GET'][$uri] = $controller;
 	}
 
 
-	public function post($uri, $controller )
+	public function post($uri, $controller)
 	{
 		$this->routes['POST'][$uri] = $controller;
 	}
@@ -33,10 +33,29 @@ class Router
 
 	public function direct($uri, $requestType)
 	{
-		//'about' => 'controllers/about.php',
-		 if (array_key_exists($uri, $this->routes[$requestType])) {
-		 	return $this->routes[$requestType][$uri];
-		 }
+		//die(var_dump($uri, $requestType));
+
+		if (array_key_exists($uri, $this->routes[$requestType])) {
+
+			return $this->controllerMethod(
+				//... Spread Operator
+				...explode('@', $this->routes[$requestType][$uri])
+			);
+		}
 		throw new Exception('No route define for the URI');
+	}
+
+
+	protected function controllerMethod($controller, $method)
+	{
+		$controller = new $controller;
+	
+		if (!method_exists($controller, $method)) {
+			throw new Exception(
+				"{$controller} does not respond to the {$method} action"
+			);
+		}
+
+		return ($controller)->$method();
 	}
 }
